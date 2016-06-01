@@ -6,11 +6,9 @@ public class Test {
     public void original() {
         Integer a = 5;
         change(a);
-        System.out.println(a);
     }
 
     private void change(Integer a) {
-        System.out.println(a);
         a += 1;   //Integer is immutable
     }
 
@@ -46,11 +44,11 @@ public class Test {
                 return;
             }
 
-            for (int i = 0; i < num.length; i++) {
-                if (list.contains(num[i])) {
+            for (int i : num) {
+                if (list.contains(i)) {
                     continue;
                 }
-                list.add(num[i]);
+                list.add(i);
                 helper(rst, list, num);
                 list.remove(list.size() - 1);
             }
@@ -61,6 +59,11 @@ public class Test {
             int[] num = {1, 2, 3};
             Permutations p = new Permutations();
             System.out.println(p.permute(num));
+            //test how to convert a Integer char to int, cast is not a good option;
+            String a = "1";
+            System.out.println((int) a.charAt(0));
+            System.out.println(Integer.parseInt(a.charAt(0) + ""));
+            System.out.println(Character.getNumericValue(a.charAt(0)));
         }
     }
 }
