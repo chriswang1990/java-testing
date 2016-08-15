@@ -79,6 +79,11 @@ public class Test {
             while (!pq.isEmpty()) {
                 System.out.println(pq.poll());
             }
+            int five = 5;
+            System.out.println(five++);
+            System.out.println(++five);
+            System.out.println(five--);
+            System.out.println(--five);
         }
     }
 }
