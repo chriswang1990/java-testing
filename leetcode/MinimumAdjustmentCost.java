@@ -15,6 +15,7 @@ You can assume each number in the array is a positive integer and not greater th
  */
 
 public class MinimumAdjustmentCost {
+  /*Brutal recursion*/
   public static int MinAdjustmentCost1(ArrayList<Integer> A, int target) {
     if (A == null || A.size() == 0) {
       return 0;
@@ -42,6 +43,7 @@ public class MinimumAdjustmentCost {
     return min;
   }
 
+  /*Recursion with 2D memory*/
   public static int MinAdjustmentCost2(ArrayList<Integer> A, int target) {
     if (A == null || A.size() == 0) {
       return 0;
@@ -81,8 +83,43 @@ public class MinimumAdjustmentCost {
     return min;
   }
 
+  public static int MinAdjustmentCost3(ArrayList<Integer> A, int target) {
+
+    if (A == null || A.size() == 0) {
+      return 0;
+    }
+
+    int len = A.size();
+    // minimum adjustment cost to change A[i] to j calculated from 0 to i
+    int[][] f = new int[len][101];
+
+    for (int i = 0; i < len; i++) {
+      for (int j = 0; j < 101; j++) {
+        f[i][j] = Integer.MAX_VALUE;
+        if (i == 0) {
+          f[i][j] = Math.abs(j - A.get(i));
+          continue;
+        }
+        for (int k = 0; k < 101; k++) {
+          if (Math.abs(k - j) > target) {
+            continue;
+          }
+          int dif = Math.abs(j - A.get(i)) + f[i - 1][k];
+          f[i][j] = Math.min(f[i][j], dif);
+        }
+      }
+    }
+
+    int ans = Integer.MAX_VALUE;
+    for (int j = 0; j < 101; j++) {
+      ans = Math.min(ans, f[len - 1][j]);
+    }
+
+    return ans;
+  }
+
   public static void main(String[] args) {
     ArrayList<Integer> list = new ArrayList<>(Arrays.asList(12,3,7,4,5,13,2,8,4,7,6,5,7));
-    System.out.println(MinAdjustmentCost2(list, 2));
+    System.out.println(MinAdjustmentCost3(list, 2));
   }
 }
