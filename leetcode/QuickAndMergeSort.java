@@ -22,12 +22,6 @@ public class QuickAndMergeSort {
         quickSort(array, pos, end);
     }
 
-    public static void swap(int[] array, int a, int b) {
-        int temp = array[a];
-        array[a] = array[b];
-        array[b] = temp;
-    }
-
     public static void mergeSort(int[] array, int start, int end) {
         if (end == start) {
             return;
@@ -59,6 +53,11 @@ public class QuickAndMergeSort {
         }
     }
 
+    public static void swap(int[] array, int a, int b) {
+        int temp = array[a];
+        array[a] = array[b];
+        array[b] = temp;
+    }
 
     public static void main(String[] args) {
         int[] array1 = {3, 3, 3, 3, 3, 2, 2, -1000, 2999, 2999, 3000};
