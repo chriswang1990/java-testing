@@ -119,7 +119,8 @@ public class MinimumAdjustmentCost {
   }
 
   public static void main(String[] args) {
-    ArrayList<Integer> list = new ArrayList<>(Arrays.asList(12,3,7,4,5,13,2,8,4,7,6,5,7));
+    Integer[] array = {2, 3, 4, 5};
+    ArrayList<Integer> list = new ArrayList<>(Arrays.asList(array));
     System.out.println(MinAdjustmentCost3(list, 2));
   }
 }
