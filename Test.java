@@ -63,13 +63,13 @@ public class Test {
       System.out.println(p.permute(num));
       //test how to convert a Integer char to int, cast is not a good option;
       String a = "1";
-      PriorityQueue<Integer> pq = new PriorityQueue<>(2, new Comparator<Integer>() {
-
+      PriorityQueue<Integer> pq = new PriorityQueue<>(new Comparator<Integer>(){
         @Override
-        public int compare(Integer o1, Integer o2) {
-          return o2 - o1;
+        public int compare(Integer a, Integer b) {
+          return b - a;
         }
       });
+
       pq.offer(5);
       pq.offer(4);
       pq.offer(3);
