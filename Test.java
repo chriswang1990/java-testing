@@ -1,7 +1,6 @@
 package testing;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.PriorityQueue;
 
 public class Test {
@@ -62,13 +61,7 @@ public class Test {
       Permutations p = new Permutations();
       System.out.println(p.permute(num));
       //test how to convert a Integer char to int, cast is not a good option;
-      String a = "1";
-      PriorityQueue<Integer> pq = new PriorityQueue<>(new Comparator<Integer>(){
-        @Override
-        public int compare(Integer a, Integer b) {
-          return b - a;
-        }
-      });
+      PriorityQueue<Integer> pq = new PriorityQueue<>((Integer a, Integer b) -> b - a);
 
       pq.offer(5);
       pq.offer(4);
@@ -84,6 +77,7 @@ public class Test {
       System.out.println(++five);
       System.out.println(five--);
       System.out.println(--five);
+
     }
   }
 }
