@@ -1,5 +1,7 @@
 package testing.leetcode;
 
+import java.util.Random;
+
 /**
  * Quick Sort and Merge Sort
  */
@@ -8,18 +10,30 @@ public class QuickAndMergeSort {
         if (end <= start) {
             return;
         }
-        int pivot = array[start];
-        int pos = start + 1;
-        for (int i = start + 1; i <= end; i++) {
-            if (array[i] >= pivot) {
-                continue;
+        Random rand = new Random();
+        int randInt = start + rand.nextInt(end - start + 1);
+        int pivot = array[randInt];
+        int i = start;
+        int j = end;
+        while (i <= j) {
+            while (array[i] < pivot) {
+                i++;
             }
-            swap(array, i, pos);
-            pos++;
+            while (array[j] > pivot) {
+                j--;
+            }
+            if (i <= j) {
+                swap(array, i, j);
+                i++;
+                j--;
+            }
         }
-        swap(array, start, pos - 1);
-        quickSort(array, start, pos - 2);
-        quickSort(array, pos, end);
+        if (j > start) {
+            quickSort(array, start, j);
+        }
+        if (i < end) {
+            quickSort(array, i, end);
+        }
     }
 
     public static void mergeSort(int[] array, int start, int end) {
