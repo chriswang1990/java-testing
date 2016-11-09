@@ -28,42 +28,51 @@ public class QuickAndMergeSort {
                 j--;
             }
         }
-        if (j > start) {
-            quickSort(array, start, j);
-        }
         if (i < end) {
             quickSort(array, i, end);
         }
+        if (j > start) {
+            quickSort(array, start, j);
+        }
     }
 
-    public static void mergeSort(int[] array, int start, int end) {
+    public static void mergeSort(int[] A, int start, int end) {
         if (end == start) {
             return;
         }
-        if (end - start == 1) {
-            if (array[start] > array[end]) {
-                swap(array, start, end);
-            }
-        }
+
         int mid = start + (end - start) / 2;
-        mergeSort(array, start, mid);
-        mergeSort(array, mid + 1, end);
+        mergeSort(A, start, mid);
+        mergeSort(A, mid + 1, end);
         int i = start;
         int j = mid + 1;
         int k = 0;
-        int[] afterSort = new int[end - start + 1];
+        int[] sorted = new int[end - start + 1];
         while (i <= mid || j <= end) {
-            if (i > mid || (j <= end && array[j] < array[i])) {
-                afterSort[k] = array[j];
-                j++;
+            if (i <= mid && j <= end) {
+                if (A[i] <= A[j]) {
+                    sorted[k] = A[i];
+                    i++;
+                } else {
+                    sorted[k] = A[j];
+                    j++;
+                }
+                k++;
             } else {
-                afterSort[k] = array[i];
-                i++;
+                while (i <= mid) {
+                    sorted[k] = A[i];
+                    i++;
+                    k++;
+                }
+                while (j <= end) {
+                    sorted[k] = A[j];
+                    j++;
+                    k++;
+                }
             }
-            k++;
         }
-        for (int pos = 0; pos < afterSort.length; pos++) {
-            array[start + pos] = afterSort[pos];
+        for (int pos = 0; pos < sorted.length; pos++) {
+            A[start + pos] = sorted[pos];
         }
     }
 
@@ -74,9 +83,9 @@ public class QuickAndMergeSort {
     }
 
     public static void main(String[] args) {
-        int[] array1 = {3, 3, 3, 3, 3, 2, 2, -1000, 2999, 2999, 3000};
+        int[] array1 = {1,1,0,1, -2, -3, -2, 3, 3, 2};
         quickSort(array1, 0, array1.length - 1);
-        int[] array2 = {3, 2, 3, 2, 3, 2, 2};
+        int[] array2 = {1,1,0,1, -2, -3, -2, 3, 3, 2};
         mergeSort(array2, 0, array2.length - 1);
         for (int i : array1) {
             System.out.print(i + " ");
