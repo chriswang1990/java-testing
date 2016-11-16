@@ -80,8 +80,7 @@ public class Test {
       System.out.println("string contains string: " + "121314151618192012345689101171722232524".contains("12"));
 
       String i = "abc";
-      Object o = i;
-      System.out.println(i.equals(o));
+      System.out.println(Character.toLowerCase('['));
 
     }
   }
