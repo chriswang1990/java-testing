@@ -5,7 +5,7 @@ import java.util.*;
  * Created by 1990c on 3/30/2016.
  */
 public class KFrequentWords {
-  public String[] topKFrequentWords(String[] words, int k) {
+  public static String[] topKFrequentWords(String[] words, int k) {
     // Write your code here
     HashMap<String, Integer> map= new HashMap<>();
     for (String s : words) {
@@ -19,20 +19,24 @@ public class KFrequentWords {
       map.get(s);
     }
     ArrayList<Map.Entry<String, Integer>> listForSorting = new ArrayList<>(map.entrySet());
-    Collections.sort(listForSorting, new Comparator<Map.Entry<String, Integer>>() {
-      @Override
-      public int compare(Map.Entry<String, Integer> a, Map.Entry<String, Integer> b) {
+    Collections.sort(listForSorting, (a, b) -> {
         if (a.getValue().equals(b.getValue())) {
           return a.getKey().compareToIgnoreCase(b.getKey());
         } else {
           return (a.getValue() - b.getValue());
         }
-      }
     });
     String[] ans = new String[k];
     for (int i = 0; i < k; i++) {
       ans[i] = listForSorting.get(i).getKey();
     }
     return ans;
+  }
+
+  public static void main(String[] args) {
+    String[] list = {
+      "yes", "lint", "code", "yes", "code", "baby", "you", "baby", "chrome", "safari", "lint", "code", "body", "lint",
+        "code"};
+    System.out.println(Arrays.toString(KFrequentWords.topKFrequentWords(list, 4)));
   }
 }
