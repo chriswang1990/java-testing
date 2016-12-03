@@ -1,9 +1,6 @@
 package testing.leetcode;
 import java.util.*;
 
-/**
- * Created by 1990c on 3/30/2016.
- */
 public class KFrequentWords {
   public static String[] topKFrequentWords(String[] words, int k) {
     // Write your code here
