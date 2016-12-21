@@ -2,7 +2,7 @@ package testing;
 
 import java.util.Scanner;
 
-public class Testing {
+public class MaxSum {
 
     public static int maxSum (int[] a, int n, int t) {
         int maxSum = 0;
