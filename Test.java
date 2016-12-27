@@ -1,8 +1,5 @@
 package testing;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-
 public class Test {
 
     public static void main(String[] args) {
@@ -37,12 +34,21 @@ public class Test {
 //        testFormate.setTimeZone(TimeZone.getTimeZone("America/New_York"));
 //        System.out.println(testFormate.format(todayDate));
 
-        ArrayList<Integer> list = new ArrayList<>();
-        list.add(3);
-        list.add(2);
-        list.add(1);
-        Integer a = 1;
-        list.remove((int) a);
-        System.out.println(Arrays.toString(list.toArray()));
+//        ArrayList<Integer> list = new ArrayList<>();
+//        list.add(3);
+//        list.add(2);
+//        list.add(1);
+//        Integer a = 1;
+//        list.remove((int) a);
+//        System.out.println(Arrays.toString(list.toArray()));
+
+        int[] arr = new int[]{1, 11, 111, 1111, 1111, 111, 11, 1};
+        int len = arr.length;
+        for (int i = 0; i < len; i++) {
+            if (i > 0 && i % 4 == 0) {
+                System.out.println();
+            }
+            System.out.print(String.format("%5d", arr[i]));
+        }
     }
 }
