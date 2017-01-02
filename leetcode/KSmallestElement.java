@@ -1,4 +1,4 @@
-package testing.leetcode;
+package leetcode;
 
 /**
  Given two integer arrays sorted in ascending order and an integer k. Define sum = a + b, where a is an element from the

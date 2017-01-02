@@ -1,4 +1,6 @@
 package testing.leetcode;
+import leetcode.TreeNode;
+
 import java.util.ArrayList;
 /**
  * Created by 1990c on 3/3/2016.

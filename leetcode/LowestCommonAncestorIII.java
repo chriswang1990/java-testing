@@ -1,4 +1,4 @@
-package testing.leetcode;
+package leetcode;
 
 import com.sun.istack.internal.Nullable;
 

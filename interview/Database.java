@@ -1,4 +1,4 @@
-package testing.interview;
+package interview;
 
 /**
  * Created by 1990c on 11/6/2016.

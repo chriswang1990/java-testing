@@ -1,4 +1,6 @@
-package testing.leetcode;
+package leetcode;
+
+import leetcode.ListNode;
 
 import java.util.ArrayList;
 import java.util.Arrays;

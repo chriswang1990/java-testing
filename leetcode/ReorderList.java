@@ -1,4 +1,6 @@
-package testing.leetcode;
+package leetcode;
+
+import leetcode.ListNode;
 
 /**
  * Created by 1990c on 3/21/2016.

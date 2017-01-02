@@ -1,4 +1,4 @@
-package testing.leetcode;
+package leetcode;
 
 /**
  * Created by 1990c on 3/28/2016.

@@ -1,4 +1,4 @@
-package testing.leetcode;
+package leetcode;
 
 /**
  There is a building of n floors. If an egg drops from the k th floor or above, it will break. If it's dropped from any

@@ -1,4 +1,4 @@
-package testing.leetcode;
+package leetcode;
 
 public class SwapNodes {
   /**

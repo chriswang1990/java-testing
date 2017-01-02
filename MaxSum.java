@@ -1,5 +1,3 @@
-package testing;
-
 import java.util.Scanner;
 
 public class MaxSum {

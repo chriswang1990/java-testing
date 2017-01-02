@@ -1,4 +1,4 @@
-package testing.leetcode;
+package leetcode;
 
 /**
  You have two numbers represented by a linked list, where each node contains a single digit. The digits are stored in
