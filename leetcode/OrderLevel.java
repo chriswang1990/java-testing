@@ -1,6 +1,5 @@
-package testing.leetcode;
+package leetcode;
 
-import javax.swing.tree.TreeNode;
 import java.util.ArrayList;
 
 /**

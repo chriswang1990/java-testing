@@ -6,6 +6,7 @@ import java.util.Scanner;
  * Created by 1990c on 12/16/2016.
  */
 public class AlgorithmicCrush {
+
   public static void main(String[] args) {
         /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
     Scanner in = new Scanner(System.in);
