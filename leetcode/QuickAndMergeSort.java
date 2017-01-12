@@ -28,12 +28,8 @@ public class QuickAndMergeSort {
                 j--;
             }
         }
-        if (i < end) {
-            quickSort(array, i, end);
-        }
-        if (j > start) {
-            quickSort(array, start, j);
-        }
+        quickSort(array, i, end);
+        quickSort(array, start, j);
     }
 
     public static void mergeSort(int[] A, int start, int end) {
@@ -48,28 +44,18 @@ public class QuickAndMergeSort {
         int j = mid + 1;
         int k = 0;
         int[] sorted = new int[end - start + 1];
-        while (i <= mid || j <= end) {
-            if (i <= mid && j <= end) {
-                if (A[i] <= A[j]) {
-                    sorted[k] = A[i];
-                    i++;
-                } else {
-                    sorted[k] = A[j];
-                    j++;
-                }
-                k++;
+        while (i <= mid && j <= end) {
+            if (A[i] <= A[j]) {
+                sorted[k++] = A[i++];
             } else {
-                while (i <= mid) {
-                    sorted[k] = A[i];
-                    i++;
-                    k++;
-                }
-                while (j <= end) {
-                    sorted[k] = A[j];
-                    j++;
-                    k++;
-                }
+                sorted[k++] = A[j++];
             }
+        }
+        while (i <= mid) {
+            sorted[k++] = A[i++];
+        }
+        while (j <= end) {
+            sorted[k++] = A[j++];
         }
         for (int pos = 0; pos < sorted.length; pos++) {
             A[start + pos] = sorted[pos];
@@ -83,9 +69,9 @@ public class QuickAndMergeSort {
     }
 
     public static void main(String[] args) {
-        int[] array1 = {1,1,0,1, -2, -3, -2, 3, 3, 2};
+        int[] array1 = {1, 1, 0, 1, -2, -3, -2, 3, 3, 2};
         quickSort(array1, 0, array1.length - 1);
-        int[] array2 = {1,1,0,1, -2, -3, -2, 3, 3, 2};
+        int[] array2 = {1, 1, 0, 1, -2, -3, -2, 3, 3, 2};
         mergeSort(array2, 0, array2.length - 1);
         for (int i : array1) {
             System.out.print(i + " ");
