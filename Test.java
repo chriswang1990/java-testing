@@ -1,6 +1,3 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-
 public class Test {
 
     public static void main(String[] args) {
@@ -28,7 +25,7 @@ public class Test {
 
 //      System.out.println("string contains string: " + "121314151618192012345689101171722232524".contains("12"));
 
-          //Date testing
+        //Date testing
 //        Date todayDate = new Date(System.currentTimeMillis());
 //        SimpleDateFormat testFormate = new SimpleDateFormat("yyyyMMdd");
 //        System.out.println(testFormate.format(todayDate));
@@ -53,9 +50,12 @@ public class Test {
 //            System.out.print(String.format("%5d", arr[i]));
 //        }
 
-        ArrayList<Integer> list = new ArrayList<>();
-        list.addAll(new ArrayList<>());
-        list.addAll(new ArrayList<>());
-        System.out.println(Arrays.toString(list.toArray()));
+        //addAll method
+//        ArrayList<Integer> list = new ArrayList<>();
+//        list.addAll(new ArrayList<>());
+//        list.addAll(new ArrayList<>());
+//        System.out.println(Arrays.toString(list.toArray()));
+
+//        System.out.println(-1 >> 1);
     }
 }
