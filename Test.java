@@ -57,5 +57,7 @@ public class Test {
 //        System.out.println(Arrays.toString(list.toArray()));
 
 //        System.out.println(-1 >> 1);
+
+        System.out.println("aaaaaaaaaaaaa".hashCode());
     }
 }
